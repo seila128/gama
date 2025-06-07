@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bilhetinhos </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bilhetes-container">
+    <h1>Bilhetinhos pra você, viu como sou fofa! 💖</h1>
+    <p class="bilhetes-intro">Clique em cada cartinha pra ler com o coração </p>
+
+    <div class="bilhetes-grid">
+      <div class="bilhete-card" onclick="toggleTexto(this)">
+        <h2> Eu te escolho todos os dias</h2>
+        <div class="bilhete-texto">
+          <p>Às vezes, no meio do caos da vida, o simples ato de estar no seu abraço me traz uma paz que nada mais consegue dar. É ali que encontro um refúgio, um porto seguro onde todas as preocupações desaparecem. A maneira como a gente se entende sem precisar falar nada é uma das coisas mais lindas que já vivi.</p>
+        </div>
+      </div>
+
+      <div class="bilhete-card" onclick="toggleTexto(this)">
+        <h2> Amo te</h2>
+        <div class="bilhete-texto">
+          <p>Nossa trajetória não é feita só de sorte, mas de escolhas diárias, de cuidado mútuo e de um amor que se fortalece a cada dia. Cada passo que damos juntos, mesmo os mais simples, são tijolinhos que constroem o castelo da nossa vida compartilhada. E isso me enche de orgulho e esperança para o que está por vir</p>
+        </div>
+      </div>
+
+      <div class="bilhete-card" onclick="toggleTexto(this)">
+        <h2> Só porque sim</h2>
+        <div class="bilhete-texto">
+          <p>Esse bilhetinho é só pra te lembrar que você é o melhor presente que a vida me deu </p>
+        </div>
+      </div>
+
+      <div class="bilhete-card" onclick="toggleTexto(this)">
+        <h2> Quando ouço nossa música</h2>
+        <div class="bilhete-texto">
+          <p>Djonga cantando, meu coração apertando. Só me dar vontade de meter logo um filho e morar bem longe daqui e ter a nossa familia.</p>
+        </div>
+      </div>
+
+      <div class="bilhete-card" onclick="toggleTexto(this)">
+        <h2> Slk, compensa muito </h2>
+        <div class="bilhete-texto">
+          <p> Só to esperando minha aliança de noivado daqui dois anos!</p>
+        </div>
+      </div>
+
+      <div class="bilhete-card" onclick="toggleTexto(this)">
+        <h2>Só saudade</h2>
+        <div class="bilhete-texto">
+          <p>Tem dia que só queria te abraçar e ficar ali, no teu colo, sendo boba do seu lado, gritando as vezes com você ❤️</p>
+        </div>
+      </div>
+    </div>
+
+   <div class="next">
+      <a href="nossatrajetoria.html">venha ver nossa trajetoria</a>
+    </div>
+
+
+  <script>
+    function toggleTexto(card) {
+      const texto = card.querySelector('.bilhete-texto');
+      texto.classList.toggle('aberto');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ESSENCIAL para responsividade -->
+  <title>Nossa Trajetória</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="trajetoria-container">
+    <h1 class="trajetoria-title">Mó tempão slk</h1>
+    <img class="trajetoria-foto" src="fotos/imgtragetoria.jpg" alt="Foto do casal">
+
+    <div class="contador">
+      <div class="contador-item">
+        <label>Anos</label>
+        <span id="anos">0</span>
+      </div>
+      <div class="contador-item">
+        <label>Meses</label>
+        <span id="meses">0</span>
+      </div>
+      <div class="contador-item">
+        <label>Dias</label>
+        <span id="dias">0</span>
+      </div>
+      <div class="contador-item">
+        <label>Horas</label>
+        <span id="horas">0</span>
+      </div>
+      <div class="contador-item">
+        <label>Minutos</label>
+        <span id="minutos">0</span>
+      </div>
+      <div class="contador-item">
+        <label>Segundos</label>
+        <span id="segundos">0</span>
+      </div>
+    </div>
+
+    <div class="next">
+      <a href="index.html">Vamos ouvir a musiquinha, vamos!</a>
+    </div>
+  </div>
+
+  <script>
+    const dataInicio = new Date("2024-06-23T00:00:00");
+
+    function atualizarContador() {
+      const agora = new Date();
+
+      let anos = agora.getFullYear() - dataInicio.getFullYear();
+      let meses = agora.getMonth() - dataInicio.getMonth();
+      let dias = agora.getDate() - dataInicio.getDate();
+
+      if (dias < 0) {
+        meses--;
+        const ultimoDiaMesAnterior = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+        dias += ultimoDiaMesAnterior;
+      }
+
+      if (meses < 0) {
+        anos--;
+        meses += 12;
+      }
+
+      const dataBase = new Date(
+        dataInicio.getFullYear() + anos,
+        dataInicio.getMonth() + meses,
+        dataInicio.getDate()
+      );
+      const diferencaTempo = agora - dataBase;
+
+      const horas = Math.floor(diferencaTempo / (1000 * 60 * 60)) % 24;
+      const minutos = Math.floor(diferencaTempo / (1000 * 60)) % 60;
+      const segundos = Math.floor(diferencaTempo / 1000) % 60;
+
+      document.getElementById("anos").textContent = anos;
+      document.getElementById("meses").textContent = meses;
+      document.getElementById("dias").textContent = dias;
+      document.getElementById("horas").textContent = horas;
+      document.getElementById("minutos").textContent = minutos;
+      document.getElementById("segundos").textContent = segundos;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+</body>
+</html>
