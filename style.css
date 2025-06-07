@@ -1,0 +1,318 @@
+/* 🌸 Estilo base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: linear-gradient(to bottom, #d4edda, #c7f0db); /* verde claro */
+  color: #2e7d32; /* verde escuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* ✨ Containers base */
+.container,
+.trajetoria-container,
+.historia-container,
+.gallery-container,
+.bilhetes-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 30px 20px;
+  background-color: #ffffffcc;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #a8d5ba; /* sombra verde pastel */
+  margin: 30px auto;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  margin-bottom: 10px;
+  color: #123f15;
+}
+
+p {
+  font-size: clamp(0.9rem, 1vw + 0.5rem, 1.2rem);
+  font-weight: bold;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #6aaa64; /* verde médio */
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2e7d32; /* verde escuro */
+}
+
+.next {
+  margin-top: 30px;
+}
+
+.next a {
+  text-decoration: none;
+  color: #032c06ab; /* verde escuro */
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* 📖 Nossa História */
+.historia-intro {
+  color: #2e7d32;
+  margin-bottom: 30px;
+}
+
+.historia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.historia-card {
+  background-color: #c7f0db; /* verde menta claro */
+  border: 3px dashed #6aaa64; /* verde médio */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(106, 170, 100, 0.4); /* sombra verde */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-align: center;
+  overflow: hidden;
+}
+
+.historia-card:hover {
+  transform: scale(1.03);
+}
+
+.historia-card h2 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.historia-texto {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.historia-texto.aberto {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.historia-texto p {
+  color: #256329; /* verde escuro meio suave */
+  font-size: 1rem;
+}
+
+/* 📸 Galeria */
+.gallery-container h1 {
+  color: #123f15;
+  margin-bottom: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 30px;
+}
+
+.photo-frame {
+  width: 100%;
+  max-width: 180px;
+  height: 240px;
+  border: 2px dashed #6aaa64; /* verde médio */
+  border-radius: 15px;
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.1); /* sombra verde */
+  transition: transform 0.2s ease;
+}
+
+.photo-frame:hover {
+  transform: scale(1.07);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 💌 Bilhetinhos */
+.bilhetes-intro {
+  color: #2e7d32;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.bilhetes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.bilhete-card {
+  background-color: #c7f0db; /* verde menta claro */
+  border: 3px dashed #a8d5ba; /* verde pastel */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(106, 170, 100, 0.4); /* sombra verde */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bilhete-card:hover {
+  transform: scale(1.03);
+}
+
+.bilhete-card h2 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.bilhete-texto {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.bilhete-texto.aberto {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.bilhete-texto p {
+  color: #256329;
+  font-size: 1rem;
+}
+
+/* 🗺️ Trajetória */
+.trajetoria-title {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.trajetoria-foto {
+  width: 150px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.1);
+  border: 4px dashed #6aaa64;
+}
+
+.contador {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contador-item {
+  background-color: #c7f0db;
+  padding: 10px 15px;
+  border-radius: 15px;
+  border: 3px dashed #6aaa64;
+  box-shadow: 0 5px 10px rgba(106, 170, 100, 0.4);
+  min-width: 80px;
+}
+
+.contador-item label {
+  font-size: 1rem;
+  color: #2e7d32;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.contador-item span {
+  font-size: 2rem;
+  color: #256329;
+  font-weight: bold;
+}
+
+/* 📱 Responsividade adicional */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .container,
+  .trajetoria-container,
+  .historia-container,
+  .gallery-container,
+  .bilhetes-container {
+    padding: 20px 10px;
+    margin: 20px 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .photo-frame {
+    height: 200px;
+  }
+
+  .trajetoria-foto {
+    width: 120px;
+  }
+
+  .contador-item {
+    min-width: 70px;
+  }
+
+  .historia-texto.aberto,
+  .bilhete-texto.aberto {
+    max-height: 1000px; /* evita corte de conteúdo */
+  }
+}
+
+/* 📐 Layout para telas grandes */
+@media (min-width: 900px) {
+  /* História: 2 colunas e 2 linhas */
+  .historia-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px;
+  }
+
+  /* Galeria: 3 colunas e 2 linhas */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px;
+    justify-items: center;
+  }
+}
